@@ -57,7 +57,6 @@ class NewVisitorTest(LiveServerTestCase):
         self.check_for_row_in_list_table('1: Buy peacock feathers')
         self.check_for_row_in_list_table('2: Use peacock feathers to make a fly')
 
-        self.fail("Finish the test!")
 # The page updates again and now shows both items on her list
         self.check_for_row_in_list_table('2: Use peacock feathers to make a fly')
         self.check_for_row_in_list_table('1: Buy peacock feathers')
@@ -72,7 +71,7 @@ class NewVisitorTest(LiveServerTestCase):
 
 #Francis visits the home page. There is no sign of edith's list
         self.browser.get(self.live_server_url)
-        page.text = self.browser.find_element_by_tag_name('body').text
+        page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('Buy peacock feathers', page_text)
         self.assertNotIn('make a fly', page_text)
 
