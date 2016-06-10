@@ -1,0 +1,4 @@
+Django==1.9.7
+pbr==1.10.0
+six==1.10.0
+stevedore==1.14.0
